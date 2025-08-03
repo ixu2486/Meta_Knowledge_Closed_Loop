@@ -82,7 +82,14 @@ But in reality, these claims are misleading, incomplete, or deliberately obscure
    
 ---
 
-## 📜 Provenance and Time-Locked Publication
+🔓 本專案為開發者提供首個可實際部署的SVM共享記憶系統，並已在AMD RX 5700（gfx1010:xnack-）成功驗證。  
+不靠包裝，不靠驅動魔法，不吹牛，能跑就是真相。
+
+> 這是Intel與其他廠商不願意，也無法提供給你的技術自由。
+>
+> ---
+>
+> ## 📜 Provenance and Time-Locked Publication
 
 The full-featured version of this system (`svm_core_claude_safe.py`) was privately committed to this repository prior to public release.
 
@@ -96,8 +103,3 @@ This serves as:
 - Tamper-resistant timestamp against future IP challenges
 
 > The code was ready. The world just wasn't.
-
-🔓 本專案為開發者提供首個可實際部署的SVM共享記憶系統，並已在AMD RX 5700（gfx1010:xnack-）成功驗證。  
-不靠包裝，不靠驅動魔法，不吹牛，能跑就是真相。
-
-> 這是Intel與其他廠商不願意，也無法提供給你的技術自由。
