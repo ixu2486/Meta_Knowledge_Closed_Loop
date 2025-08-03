@@ -27,6 +27,24 @@ To apply for a commercial license, contact:
 
 ---
 
+## 🧬 Version Comparison
+
+| Feature / Module                       | `svm_core_claude_safe.py` (Safe Full) | `svm_core_lite_limited.py` (Restricted) |
+|----------------------------------------|----------------------------------------|------------------------------------------|
+| Fine-Grain SVM (Zero-Copy Access)      | ✅ Enabled                             | ❌ Disabled (Fallback to host buffer)     |
+| `enqueue_svm_map` / `unmap` Support    | ✅ Fully implemented                   | ❌ Removed                                |
+| `clSetKernelArg` Bypass                | ✅ Works via true shared pointer       | ⚠️ Simulated only (non-functional stub)   |
+| Memory Tracing & Validation            | ✅ Included                             | ❌ Not available                          |
+| GPU Compatibility Layer                | ✅ Supports gfx1010:xnack- and above   | ⚠️ Partial, no xnack optimization         |
+| Legal Status                           | 🔒 Not redistributable without license | 🔓 Free for personal use under OSL       |
+| Intended Use                           | Internal R&D / Licensed Deployment     | Community Testing / Educational Use      |
+
+> ❗ The **Lite** version is intentionally restricted to prevent unauthorized commercial use or reverse engineering of the full SVM orchestration flow.
+
+> 🔒 The **Claude Safe** version is available only under explicit licensing conditions.
+
+---
+
 ## ❗ The Truth Behind So-Called "SVM Support"
 
 Several vendors — including Intel — have long claimed support for OpenCL 2.0 SVM (Shared Virtual Memory).  
