@@ -1,0 +1,9 @@
+Open Semantic License v1.0 (OSL)
+
+This software is provided free of charge for non-commercial and personal use.
+
+Commercial use, redistribution, integration into paid services or enterprise infrastructure, or training/inference pipelines offered to clients is **strictly prohibited** without an explicit commercial license.
+
+By using this software, you agree to these terms.
+
+For commercial inquiries, contact: ice.xu@retryixagi.com
