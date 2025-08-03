@@ -1,0 +1,8 @@
+File: svm_core_claude_safe.py
+SHA256: 6f0b9dc9f8d1d3cfdce6b812d00f1be6a3f9b3...
+
+File: svm_core_lite_limited.py
+SHA256: 7d4a21fc5aa3b824c50d5...
+
+Generated: 2025-08-03
+Verified by: RetryIX AGI | ice.xu@retryixagi.com
