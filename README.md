@@ -78,6 +78,24 @@ But in reality, these claims are misleading, incomplete, or deliberately obscure
 
 3. **整個SVM生態後來遭到放棄。**  
    隨著市場熱度下降，各家開始改推自有CUDA / HIP平台，對外號稱「轉型」，實則迴避。
+   
+   
+---
+
+## 📜 Provenance and Time-Locked Publication
+
+The full-featured version of this system (`svm_core_claude_safe.py`) was privately committed to this repository prior to public release.
+
+- Commit hash: `a8c9f3e...` (placeholder, fill with real hash)
+- Commit timestamp: 2025-08-03TXX:XX:XXZ
+- Stored securely under private GitHub infrastructure
+
+This serves as:
+- Cryptographic proof of authorship
+- Legal evidence of prior art and independent implementation
+- Tamper-resistant timestamp against future IP challenges
+
+> The code was ready. The world just wasn't.
 
 🔓 本專案為開發者提供首個可實際部署的SVM共享記憶系統，並已在AMD RX 5700（gfx1010:xnack-）成功驗證。  
 不靠包裝，不靠驅動魔法，不吹牛，能跑就是真相。
