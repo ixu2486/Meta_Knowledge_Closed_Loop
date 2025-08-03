@@ -1,0 +1,12 @@
+Commercial License Agreement (CLA)
+
+This document governs the conditions under which RetryIX AGI Inc grants commercial usage of the SVM Core Engine.
+
+If you are:
+- Deploying this software into any commercial platform
+- Using it to provide paid services
+- Including it in any software sold or monetized
+
+Then you are required to obtain a commercial license.
+
+To initiate the process, please email: ice.xu@retryixagi.com or ice____@msn.com
