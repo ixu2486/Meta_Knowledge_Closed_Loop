@@ -1,50 +1,34 @@
-#🧠 Meta Knowledge Closed-Loop Engine
+# 把使用者提供的中英文說明儲存為 README.md 格式
+
+readme_content = """# 🧠 Meta Knowledge Closed-Loop Engine
 **The Meta Knowledge Closed-Loop Engine is an AI system based on semantic memory field computation and self-consistent reasoning. It features robust self-repair, evolutionary memory regulation, and closed-loop cognitive inference. It integrates low-overhead memory mapping, semantic residual repair, GPU acceleration, and adaptive memory dynamics for building stable and logically consistent intelligent agents.
 
 ## ✨ Features
-🔁 Semantic closed-loop repair core
-
-🧬 Self-evolving semantic memory system
-
-🚀 GPU Zero-Copy accelerated inference
-
+🔁 Semantic closed-loop repair core  
+🧬 Self-evolving semantic memory system  
+🚀 GPU Zero-Copy accelerated inference  
 📈 Cognitive progress & semantic repair visualization
 
-🔧 Core Modules
-Module	Function
-mkclcm.py	Core controller for semantic field closed-loop
-zero_copy_breakthrough.py	Zero-copy acceleration and mapping
-svm_core.py	Shared virtual memory interface
-semantic_loader.py	Model load-time progress monitoring (recommended)
+## 🔧 Core Modules
 
-🧠 Operating Flow
-Semantic observation & vectorization
+| Module                    | Function                                      |
+|---------------------------|-----------------------------------------------|
+| `mkclcm.py`              | Core controller for semantic field closed-loop |
+| `zero_copy_breakthrough.py` | Zero-copy acceleration and mapping          |
+| `svm_core.py`            | Shared virtual memory interface                |
+| `semantic_loader.py`     | Model load-time progress monitoring (recommended) |
 
-Semantic residual detection and memory modulation
+## 🧠 Operating Flow
 
-Convergence via semantic reasoning and closed-loop correction
+1. Semantic observation & vectorization  
+2. Semantic residual detection and memory modulation  
+3. Convergence via semantic reasoning and closed-loop correction
 
-📦 Usage
-bash
+## 📦 Usage
 
+```bash
 python mkclcm.py
-📊 Performance Overview
-Mapping latency: < 3ms (Zero-Copy)
 
-Inference convergence: 3–8 steps on average
-
-GPU-enabled reasoning with parallel repair loop
-
-🛡️ Suitable Scenarios
-Offline intelligent agent simulation
-
-High-consistency semantic alignment
-
-Self-consistent reasoning & memory tasks
-
-📜 Licensing
-Free for personal and academic research use only. Commercial use requires a license.
-"""
 
 ---
 
