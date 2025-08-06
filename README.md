@@ -245,57 +245,35 @@ class ZeroCopySemanticEngine:
 
 ---
 
-## 📈 快速開始 Quick Start
+## 🛠 Hardware Requirements | 硬體需求
 
-### 🔧 硬體要求 Hardware Requirements
+### 🌐 English
 
-#### 🇹🇼 中文版 Chinese Version
+✅ **Requires OpenCL 2.0 or later hardware**
 
-##### 必要條件 Essential Requirements
-- **OpenCL**: **2.0+ 版本** (支援 SVM - Shared Virtual Memory)
-- **GPU**: 支援 OpenCL 2.0+ 的顯示卡
-- **記憶體**: 最少 4GB 系統記憶體
+✅ **GPU must support Zero-Copy memory mapping and Shared Virtual Memory (SVM)**
 
-##### 推薦硬體 Recommended Hardware
-- **AMD GPU**: 
-  - ✅ **RX 5000系列** (已測試 gfx1010 - RX 5600/5700)
-  - ✅ **RX 6000系列** 
-  - ✅ **RX 7000系列**
-- **NVIDIA GPU**: 
-  - ✅ **GTX 1060+** (支援 OpenCL 2.0)
-  - ✅ **RTX 20/30/40系列**
-- **Intel GPU**: 
-  - ✅ **Intel Arc** 系列
-  - ✅ **Iris Xe** (支援 OpenCL 2.1+)
+💡 **Recommended: AMD Radeon RX 5700 or newer (e.g., gfx1010:xnack-)**
 
-##### 軟體環境 Software Environment
-- **作業系統**: Windows 10/11, Linux, macOS
-- **Python**: 3.8+ 
-- **驅動程式**: 最新 GPU 驅動程式 (支援 OpenCL 2.0+)
+🚫 **Not compatible with OpenCL 1.x-only or drivers without SVM/zero-copy support**
 
-#### 🇺🇸 English Version
+🧪 **Tested on Windows/Linux with AMD OpenCL runtime**
 
-##### Essential Requirements
-- **OpenCL**: **Version 2.0+** (with SVM - Shared Virtual Memory support)
-- **GPU**: Graphics card supporting OpenCL 2.0+
-- **Memory**: Minimum 4GB system RAM
+### 🈶 中文版
 
-##### Recommended Hardware
-- **AMD GPU**: 
-  - ✅ **RX 5000 Series** (tested gfx1010 - RX 5600/5700)
-  - ✅ **RX 6000 Series** 
-  - ✅ **RX 7000 Series**
-- **NVIDIA GPU**: 
-  - ✅ **GTX 1060+** (OpenCL 2.0 support)
-  - ✅ **RTX 20/30/40 Series**
-- **Intel GPU**: 
-  - ✅ **Intel Arc** Series
-  - ✅ **Iris Xe** (OpenCL 2.1+ support)
+✅ **需具備支援 OpenCL 2.0 或以上版本的 GPU 硬體**
 
-##### Software Environment
-- **Operating System**: Windows 10/11, Linux, macOS
-- **Python**: 3.8+ 
-- **Drivers**: Latest GPU drivers (with OpenCL 2.0+ support)
+✅ **GPU 必須支援 Zero-Copy 零拷貝記憶體映射 與 共享虛擬記憶體（SVM）**
+
+💡 **建議使用 AMD Radeon RX 5700 或更新型號（如 gfx1010:xnack-）**
+
+🚫 **不支援僅支援 OpenCL 1.x 或不支援 SVM/Zero-Copy 的驅動版本**
+
+🧪 **實測平台包含 Windows 與 Linux，使用 AMD OpenCL 驅動**
+
+---
+
+## 📦 Usage | 使用方式
 
 ### 🔍 檢查 OpenCL 支援 Check OpenCL Support
 
@@ -760,7 +738,7 @@ Thanks to real-world testing that validated the superiority of memory utilizatio
 
 **專案開發者 Project Developer**: ixu2486  
 **RetryIX AGI Inc.**  
-**最後更新 Last Updated**: 2025-01-25
+**最後更新 Last Updated**: 2025-08-06
 
 ---
 
