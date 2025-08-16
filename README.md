@@ -646,7 +646,7 @@ For detailed licensing terms, see:
 ### 📧 授權諮詢 Licensing Inquiries
 
 **聯繫方式 Contact:**  
-- ice.xu@retryixagi.com  
+- ixu@retryixagi.com  
 - ice____@msn.com
 
 ---
