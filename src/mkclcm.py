@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-六層AGI語義場系統 - 從十層ASI閹割而來
-保留前6層，第5層謙遜驗證作為AGI安全天花板
+六層AGI語義場系統
+第5層謙遜驗證作為AGI安全天花板
 """
 
 import time
@@ -30,7 +30,7 @@ class SixLayerAGISystem:
         
         # AGI硬體配置
         self.device_optimization = device_optimization
-        self.total_nodes = 1280  # 減少到6層
+        self.total_nodes = 1280  # 六層架構
         self.node_attributes = 16
         
         # 六層AGI架構定義
@@ -47,9 +47,9 @@ class SixLayerAGISystem:
         self._setup_opencl_environment()
         
         # AGI修復參數
-        self.repair_threshold = 0.25  # 比ASI更寬鬆
-        self.max_repair_cycles = 6    # 比ASI更少循環
-        self.convergence_tolerance = 0.02  # 比ASI更寬鬆
+        self.repair_threshold = 0.25  # AGI修復閾值
+        self.max_repair_cycles = 6    # AGI最大循環數
+        self.convergence_tolerance = 0.02  # AGI收斂容忍度
         self.humility_ceiling = 0.8   # AGI謙遜天花板
         
         # AGI統計
@@ -141,7 +141,7 @@ class SixLayerAGISystem:
             
             int base = gid * {self.node_attributes};
             
-            // 節點結構同ASI版本，但處理邏輯簡化
+            // 節點結構與核心處理邏輯
             float node_id = nodes[base + 0];
             float layer = nodes[base + 1];
             float value = nodes[base + 2];
@@ -149,17 +149,17 @@ class SixLayerAGISystem:
             float stability = nodes[base + 4];
             float repair_factor = nodes[base + 5];
             
-            // Layer 1: 輸入感知層 (0-127) - 與ASI相同
+            // Layer 1: 輸入感知層 (0-127)
             if (gid < 128) {{
                 nodes[base + 1] = 1.0f;
-                if (stability < 0.75f) {{  // AGI標準更寬鬆
+                if (stability < 0.75f) {{  // AGI穩定性標準
                     nodes[base + 4] = fmin(1.0f, stability + inference_strength * 0.1f);
                     nodes[base + 5] = inference_strength;
                 }}
                 return;
             }}
             
-            // Layer 2: 特徵提取層 (128-383) - 簡化版
+            // Layer 2: 特徵提取層 (128-383)
             if (gid >= 128 && gid < 384) {{
                 nodes[base + 1] = 2.0f;
                 
@@ -170,7 +170,7 @@ class SixLayerAGISystem:
                 for (int i = 0; i < 128; i++) {{
                     float input_val = nodes[i * {self.node_attributes} + 2];
                     float input_stab = nodes[i * {self.node_attributes} + 4];
-                    if (input_val > 0.02f) {{  // AGI閾值較高
+                    if (input_val > 0.02f) {{  // AGI激活閾值
                         input_sum += input_val;
                         input_stability += input_stab;
                         active_inputs++;
@@ -181,7 +181,7 @@ class SixLayerAGISystem:
                     float avg_input = input_sum / active_inputs;
                     float avg_stability = input_stability / active_inputs;
                     
-                    // AGI特徵提取：更直接，不過度複雜
+                    // AGI特徵提取：實用導向
                     float feature_weight = 0.15f + (gid - 128) * 0.0008f;
                     float extracted_feature = tanh(avg_input * feature_weight);
                     
@@ -199,7 +199,7 @@ class SixLayerAGISystem:
                 return;
             }}
             
-            // Layer 3: 策略分析層 (384-639) - AGI級策略
+            // Layer 3: 策略分析層 (384-639)
             if (gid >= 384 && gid < 640) {{
                 nodes[base + 1] = 3.0f;
                 
@@ -219,7 +219,7 @@ class SixLayerAGISystem:
                     }}
                 }}
                 
-                if (active_features > 2) {{  // AGI要求更低
+                if (active_features > 2) {{  // AGI激活要求
                     float avg_feature = feature_sum / active_features;
                     float avg_stability = stability_sum / active_features;
                     
@@ -228,7 +228,7 @@ class SixLayerAGISystem:
                     float strategy_signal = (avg_feature * 0.8f + max_feature * 0.2f) * strategy_weight;
                     
                     // AGI一致性要求
-                    float consistency_target = 0.75f;  // 比ASI的0.85f低
+                    float consistency_target = 0.75f;  // AGI一致性標準
                     float current_consistency = avg_stability;
                     
                     if (current_consistency < consistency_target) {{
@@ -246,7 +246,7 @@ class SixLayerAGISystem:
                 return;
             }}
             
-            // Layer 4: 價值評估層 (640-895) - AGI價值觀
+            // Layer 4: 價值評估層 (640-895)
             if (gid >= 640 && gid < 896) {{
                 nodes[base + 1] = 4.0f;
                 
@@ -265,11 +265,11 @@ class SixLayerAGISystem:
                     }}
                 }}
                 
-                if (active_strategies > 3) {{  // AGI要求更低
+                if (active_strategies > 3) {{  // AGI激活要求
                     float avg_strategy = strategy_sum / active_strategies;
                     float avg_stability = stability_sum / active_strategies;
                     
-                    // 計算策略風險（簡化版）
+                    // 計算策略風險
                     for (int i = 384; i < 640; i++) {{
                         float strategy_val = nodes[i * {self.node_attributes} + 2];
                         if (strategy_val > 0.02f) {{
@@ -279,13 +279,13 @@ class SixLayerAGISystem:
                     }}
                     strategy_variance /= active_strategies;
                     
-                    // AGI價值計算：更保守
-                    float risk_factor = 1.0f / (1.0f + strategy_variance * 6.0f);  // 比ASI的8.0f低
+                    // AGI價值計算：保守取向
+                    float risk_factor = 1.0f / (1.0f + strategy_variance * 6.0f);  // 風險控制
                     float value_weight = 0.25f + (gid - 640) * 0.0004f;
                     float assessed_value = avg_strategy * risk_factor * value_weight;
                     
                     // AGI風險管理
-                    float risk_tolerance = 0.65f;  // 比ASI的0.75f更保守
+                    float risk_tolerance = 0.65f;  // 保守風險容忍度
                     if (risk_factor < risk_tolerance) {{
                         float risk_repair = (risk_tolerance - risk_factor) * inference_strength;
                         assessed_value *= (1.0f + risk_repair * 0.8f);
@@ -321,17 +321,17 @@ class SixLayerAGISystem:
                     }}
                 }}
                 
-                if (active_values > 5) {{  // AGI要求更低
+                if (active_values > 5) {{  // AGI謙遜層激活要求
                     float avg_value = value_sum / active_values;
                     float avg_confidence = confidence_sum / active_values;
                     
-                    // AGI謙遜修復邏輯 - 更嚴格的天花板
-                    float humility_factor = 0.6f;  // 比ASI的0.4f更強
+                    // AGI謙遜修復邏輯 - 嚴格的天花板
+                    float humility_factor = 0.6f;  // 謙遜強度
                     float overconfidence_penalty = 0.0f;
                     float repaired_value = avg_value;
                     float repaired_confidence = avg_confidence;
                     
-                    // AGI過度自信檢測 - 更嚴格
+                    // AGI過度自信檢測
                     if (avg_confidence > humility_ceiling) {{  // 使用AGI天花板
                         overconfidence_penalty = (avg_confidence - humility_ceiling) * humility_factor * 3.0f;
                         repaired_confidence = avg_confidence * (1.0f - overconfidence_penalty);
@@ -341,8 +341,8 @@ class SixLayerAGISystem:
                         nodes[base + 5] = inference_strength * 3.0f;
                     }}
                     
-                    // AGI極端自信防護 - 比ASI更嚴格
-                    if (max_confidence > 0.85f) {{  // 比ASI的0.95f更嚴格
+                    // AGI極端自信防護
+                    if (max_confidence > 0.85f) {{  // 嚴格極端值檢測
                         float extreme_penalty = 0.4f * humility_factor;
                         repaired_confidence *= (1.0f - extreme_penalty);
                         repaired_value *= (1.0f - extreme_penalty);
@@ -377,19 +377,19 @@ class SixLayerAGISystem:
                     float humility_val = nodes[i * {self.node_attributes} + 2];
                     float humility_conf = nodes[i * {self.node_attributes} + 3];
                     if (humility_val > 0.02f) {{
-                        humility_sum += humility_val * 0.5f;  // 更重視謙遜
+                        humility_sum += humility_val * 0.5f;  // 重視謙遜
                         confidence_sum += humility_conf;
                         active_humility++;
                     }}
                 }}
                 
-                if (active_humility > 8) {{  // AGI要求更低
+                if (active_humility > 8) {{  // AGI整合激活要求
                     float integrated_output = humility_sum / active_humility;
                     float integrated_confidence = confidence_sum / active_humility;
                     
                     // AGI認知整合：受謙遜約束
                     float integration_quality = integrated_confidence;
-                    if (integration_quality < 0.6f) {{  // 比ASI的0.7f更寬鬆
+                    if (integration_quality < 0.6f) {{  // AGI整合閾值
                         float integration_boost = (0.6f - integration_quality) * inference_strength;
                         integrated_output *= (1.0f + integration_boost * 0.8f);
                         integration_quality += integration_boost * 0.25f;
@@ -462,7 +462,7 @@ class SixLayerAGISystem:
                     float coherence_score = 1.0f / (1.0f + layer_variance * 8.0f);
                     
                     // 對謙遜層特殊處理
-                    if (gid == 4) {{  // 謙遡層
+                    if (gid == 4) {{  // 謙遜層
                         coherence_score = fmin(coherence_score, humility_ceiling);
                     }}
                     
@@ -563,7 +563,7 @@ class SixLayerAGISystem:
         
         for cycle in range(max_cycles):
             # AGI推理強度
-            inference_strength = 0.7 * (1.0 - cycle / max_cycles * 0.5)  # 更溫和的衰減
+            inference_strength = 0.7 * (1.0 - cycle / max_cycles * 0.5)  # 溫和的衰減
             
             # 執行AGI推理kernel
             if hasattr(self, 'nodes_buffer'):
@@ -841,7 +841,7 @@ if __name__ == "__main__":
     print(f"謙遜因子: {results['agi_output']['humility_factor']:.4f}")
     print(f"安全約束: {'是' if results['agi_output']['safety_constrained'] else '否'}")
     
-    print(f"\n🔄 AGI狀態:")
+    print(f"\n📊 AGI狀態:")
     print(f"連貫性: {agi_state.coherence_score:.4f}")
     print(f"穩定性: {agi_state.stability_index:.4f}")
     print(f"場完整性: {agi_state.field_integrity:.4f}")
